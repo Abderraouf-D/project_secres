@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus API Documentation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+    <style>
+        .api-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .endpoint {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .method {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            width: 60px;
+            text-align: center;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .get {
+            background-color: #61affe;
+        }
+
+        .post {
+            background-color: #49cc90;
+        }
+
+        .url {
+            font-family: monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        .description {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .params {
+            margin-top: 10px;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 4px solid #ddd;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.8em;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: #eee;
+            color: #555;
+        }
+
+        .tag-admin {
+            background: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Nexus Docs</div>
+        <div class="nav-links">
+            <a href="/home">Go Back</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="api-container">
+            <h1>API Reference v1.0</h1>
+            <p>Documentation for the Nexus Portal API for developers and integrators.</p>
+            <hr>
+
+            <div class="endpoint">
+                <span class="method get">GET</span> <span class="url">/api/status</span>
+                <div class="description">Check system health status.</div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span> <span class="url">/report</span>
+                <div class="description">Submit a support ticket or URL for admin review.</div>
+                <div class="params">
+                    <strong>Parameters:</strong> <code>url</code> (string, required)
+                </div>
+            </div>
+
+            <div class="endpoint">
+                <span class="method post">POST</span> <span class="url">/make_admin</span> <span
+                    class="tag tag-admin">Internal</span>
+                <div class="description">Promote a user to Administrator role.</div>
+                <div class="params">
+                    <strong>Parameters:</strong> <code>username</code> (string, required)
+                </div>
+                <p style="color: #d9534f; font-size: 0.9em;"><em>Note: This endpoint is restricted to Administrator use
+                        only. Accessible via POST or GET for legacy support.</em></p>
+            </div>
+
+            <div class="endpoint">
+                <span class="method get">GET</span> <span class="url">/admin/logs</span> <span
+                    class="tag tag-admin">Admin</span>
+                <div class="description">Retrieve system logs.</div>
+                <div class="params">
+                    <strong>Parameters:</strong> <code>logfile</code> (string, optional)
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/admin.css') }}">
+</head>
+
+<body>
+    <div class="admin-container">
+        <h1>External Link Scanner</h1>
+        <div class="alert"
+            style="background-color: #d1e7dd; color: #0f5132; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
+            <strong>Success!</strong> You have reached the Admin Panel. Flag 1:
+            <code>SecRes{1st_flag_csrf_admin_access}</code>
+        </div>
+        <p>Validate external resources and partner links before inclusion in the knowledge base.</p>
+        <form action="/admin" method="GET" class="search-form">
+            <input type="text" id="url" name="url" placeholder="http://partner-site.com/resource"
+                value="{{ url if url }}">
+            <button type="submit" class="btn">Scan Link</button>
+        </form>
+
+        {% if error %}
+        <div class="error-message">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        {% if file_content %}
+        <div class="output-container">
+            <h2>Log Content:</h2>
+            <pre>{{ file_content }}</pre>
+        </div>
+        {% endif %}
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eaeaea;">
+
+        <h1>System Logs</h1>
+        <p>View application logs for debugging.</p>
+        <form action="/admin" method="GET" class="search-form">
+            <select name="logfile" id="logfile"
+                style="padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; margin-right: 15px;">
+                <option value="app.log">Application Log</option>
+                <option value="access.log">Access Log</option>
+                <option value="error.log">Error Log</option>
+            </select>
+            <!-- Hidden hint for LFI -->
+            <!-- <input type="text" name="logfile" value="main.py"> -->
+            <button type="submit" class="btn">View Log</button>
+        </form>
+
+        {% if output %}
+        <div class="output-container">
+            <h2>Output:</h2>
+            <pre>{{ output }}</pre>
+        </div>
+        {% endif %}
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eaeaea;">
+
+        <h1>User Management</h1>
+        <p>Promote an employee to Administrator status.</p>
+        <form action="/make_admin" method="POST" class="search-form">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <button type="submit" class="btn">Promote</button>
+        </form>
+
+        <div class="post-list">
+            <!-- Removed post list since we removed the search feature -->
+        </div>
+    </div>
+</body>
+
+</html>

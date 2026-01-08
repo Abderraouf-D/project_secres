@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/createpost.css') }}">
+
+</head>
+<body>
+    <div class="login-container">
+        <form action="/report" method="POST" class="login-form">
+            {% if message %}
+                <div class="success-message"> {{ message }} </div>
+            {% endif %}
+            {% if error %}
+                <div class="error-message"> {{ error }} </div>
+            {% endif %}
+            <h2>Report URL</h2>
+            <div class="form-group">
+                <label for="url">URL:</label>
+                <input type="text" id="url" name="url" placeholder="https://www.example.com/" required>
+            </div>
+
+            <button type="submit" class="btn">Report</button>
+        </form>
+    </div>
+    
+</body>
+</html>

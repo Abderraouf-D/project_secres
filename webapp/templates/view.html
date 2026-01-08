@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Post</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/createpost.css') }}">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.0/purify.min.js"></script> -->
+</head>
+
+<body>
+    <div class="post-form-container">
+        {% if post_id %}
+        <h1>Post {{post_id}}</h1>
+        {% endif %}
+        {% if post %}
+        <h2 id="title" style="text-align: left;">{{ post.title }}</h2>
+        <div id="content"></div>
+        {% else %}
+        <h1>Post not found</h1>
+        {% endif %}
+    </div>
+    <div id="content">{{ post.content }}</div>
+</body>
+
+</html>

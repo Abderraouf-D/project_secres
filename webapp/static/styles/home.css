@@ -1,0 +1,145 @@
+/* Corporate/Clean Theme for Home */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #fff;
+    color: #333;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+nav ul {
+    list-style: none;
+    height: 1.5rem;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 2rem;
+    float: right;
+}
+
+nav ul li a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+.hero {
+    background: #fff;
+    padding: 80px 0;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.hero p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+.btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features {
+    padding: 80px 0;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.feature-item {
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.feature-item p {
+    color: #666;
+}
+
+footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #fca5a5;
+    margin-bottom: 15px;
+}

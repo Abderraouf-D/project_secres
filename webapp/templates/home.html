@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            {% if user %}
+            <h1>Welcome to Nexus Portal // {{ user.username }}</h1>
+            {% else %}
+            <h1>Welcome to Nexus Portal</h1>
+            {% endif %}
+            <nav>
+                <ul>
+                    {% if user %}
+                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/report">Submit Ticket</a></li>
+                    <li><a href="/myposts">My Projects</a></li>
+                    <li><a href="/createpost">New Entry</a></li>
+                    {% else %}
+                    <li><a href="/register">Employee Registration</a></li>
+                    <li><a href="/login">Employee Login</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <p>Nexus Portal is the centralized hub for internal communication, project management, and knowledge
+                sharing. Connect with your team, share updates, and drive innovation within a secure corporate
+                environment.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Platform Capabilities</h2>
+            <div class="feature-item">
+                <h3>Secure Collaboration</h3>
+                <p>Enterprise-grade security for your internal documents and communications.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Team Synergy</h3>
+                <p>Seamlessly connect with colleagues across departments.</p>
+            </div>
+            <div class="feature-item">
+                <h3>High Performance</h3>
+                <p>Optimized for speed and reliability to keep your workflow uninterrupted.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nexus Corp. All rights reserved. Authorized Personnel Only.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

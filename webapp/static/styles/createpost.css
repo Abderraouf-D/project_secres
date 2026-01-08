@@ -1,0 +1,97 @@
+/* Corporate/Clean Theme for Create Post */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.post-form-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+#title {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    border-radius: 6px;
+}
+
+#title:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+#content {
+    width: 100%;
+    min-height: 400px;
+    padding: 15px;
+    margin-bottom: 25px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    resize: vertical;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+#content:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Post View Specifics */
+.post-form-container h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
